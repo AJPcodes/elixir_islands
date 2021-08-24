@@ -1,9 +1,11 @@
 alias IslandsEngine.{Coordinate, Guesses, Island, Board}
 
-guesses = Guesses.new
+board = Board.new()
 
-{:ok, coordinate1} = Coordinate.new(1, 1)
+{:ok, square_coordinate} = Coordinate.new(1, 1)
+{:ok, square} = Island.new(:square, square_coordinate)
+board = Board.position_island(board, :square, square)
 
-{:ok, coordinate2} = Coordinate.new(2, 2)
-
-guesses = update_in(guesses.hits, &MapSet.put(&1, coordinate1))
+{:ok, new_dot_coordinate} = Coordinate.new(3, 3)
+{:ok, dot} = Island.new(:dot, new_dot_coordinate)
+board = Board.position_island(board, :dot, dot)
