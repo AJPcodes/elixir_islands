@@ -1,4 +1,4 @@
-alias IslandsEngine.{Coordinate, Guesses, Island, Board}
+alias IslandsEngine.{Coordinate, Guesses, Island, Board, Game}
 
 board = Board.new()
 
